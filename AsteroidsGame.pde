@@ -7,9 +7,10 @@ public void draw()
 {
   //your code here
 }
-class SpaceShip //extends Floater  
+class SpaceShip extends Floater  
 {   
-    //your code here
+   public void setX(int x) {myCenterX = x;}
+   public int getX();
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   

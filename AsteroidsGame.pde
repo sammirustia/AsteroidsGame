@@ -1,12 +1,16 @@
-
+SpaceShip max;
 
 public void setup() 
 {
-  size (500,500);
+  size (600,600);
+  background(28,26,81);
+  max = new SpaceShip();
 }
 public void draw() 
 {
-  //your code here
+  background(28,26,81);
+  max.show();
+
 }
 class SpaceShip extends Floater  
 {
@@ -19,11 +23,11 @@ class SpaceShip extends Floater
       xCorners = xS;
       yCorners = yS;
       myColor = color(255);
-      myCenterX = 250;
-      myCenterY = 250;
-      myDirectionX = 3;
-      myDirectionY = 2;
-      myPointDirection = -100;
+      myCenterX = 300;
+      myCenterY = 300;
+      myDirectionX = 0;
+      myDirectionY = 0;
+      myPointDirection = 270;
   }
   
    public void setX(int x) {myCenterX = x;}
@@ -58,6 +62,14 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   abstract public void setPointDirection(int degrees);   
   abstract public double getPointDirection(); 
 
+  public void keyPressed()
+  {
+    if(keycode == 'LEFT')
+    {
+      max.
+    }
+   
+  }
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
   {          

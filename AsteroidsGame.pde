@@ -10,8 +10,35 @@ public void draw()
 {
   background(28,26,81);
   max.show();
-
+  max.move();
 }
+
+public void keyPressed()
+  {
+    if(keyCode == LEFT)
+    {
+      max.rotate(-15);
+    }
+    else if(keyCode == RIGHT)
+    {
+      max.rotate(15);
+    }
+    else if(keyCode == UP)
+    {
+      max.accelerate(.03);
+    }
+  }
+
+  public void keyTyped()
+  {
+    if(key == 'h')
+    {
+      max.setDirectionX(0);
+      max.setDirectionY(0);
+      max.setX((int)(Math.random()*600)+1);
+      max.setY((int)(Math.random()*600)+1);
+    }
+  }
 class SpaceShip extends Floater  
 {
   
@@ -62,14 +89,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   abstract public void setPointDirection(int degrees);   
   abstract public double getPointDirection(); 
 
-  public void keyPressed()
-  {
-    if(keycode == 'LEFT')
-    {
-      max.
-    }
-   
-  }
+
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
   {          

@@ -1,16 +1,43 @@
 SpaceShip max;
+Star [] bright = new Star[200];
 
 public void setup() 
 {
   size (600,600);
   background(28,26,81);
   max = new SpaceShip();
+  for(int i = 0; i < bright.length; i++)
+  {
+    bright[i] = new Star();
+  }
 }
 public void draw() 
 {
   background(28,26,81);
   max.show();
   max.move();
+  for(int i = 0; i < bright.length;i++)
+  {
+    bright[i].show();
+  }
+}
+
+class Star
+{
+  private int myX, myY, myColor;
+
+  public Star() 
+  {
+    myColor = color(251,252,178);
+    myX = (int)(Math.random()*600);
+    myY = (int)(Math.random()*600);
+    
+  }
+  public void show()
+  {
+    stroke(myColor);
+    ellipse(myX,myY,2,2);
+  }
 }
 
 public void keyPressed()
@@ -25,7 +52,7 @@ public void keyPressed()
     }
     else if(keyCode == UP)
     {
-      max.accelerate(.03);
+      max.accelerate(.1);
     }
   }
 
@@ -129,7 +156,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     }   
   }   
   public void show ()  //Draws the floater at the current position  
-  {             
+  {        
     fill(myColor);   
     stroke(myColor);    
     //convert degrees to radians for sin and cos         

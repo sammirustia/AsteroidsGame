@@ -64,6 +64,7 @@ public void keyPressed()
       max.setDirectionY(0);
       max.setX((int)(Math.random()*600)+1);
       max.setY((int)(Math.random()*600)+1);
+      max.setPointDirection((int)(Math.random()*360));
     }
   }
 class SpaceShip extends Floater  
@@ -84,6 +85,7 @@ class SpaceShip extends Floater
       myPointDirection = 270;
   }
   
+class Asteroid extends 
    public void setX(int x) {myCenterX = x;}
    public int getX() {return (int)myCenterX;}
    public void setY(int y) {myCenterY = y;}

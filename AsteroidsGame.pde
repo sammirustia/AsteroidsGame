@@ -67,6 +67,7 @@ public void keyPressed()
       max.setPointDirection((int)(Math.random()*360));
     }
   }
+
 class SpaceShip extends Floater  
 {
   
@@ -85,7 +86,6 @@ class SpaceShip extends Floater
       myPointDirection = 270;
   }
   
-class Asteroid extends 
    public void setX(int x) {myCenterX = x;}
    public int getX() {return (int)myCenterX;}
    public void setY(int y) {myCenterY = y;}
@@ -96,6 +96,37 @@ class Asteroid extends
    public double getDirectionY() {return (double)myDirectionY;}
    public void setPointDirection(int degrees) {myPointDirection = degrees;}
    public double getPointDirection() {return (double)myPointDirection;}   
+}
+
+
+
+class Asteroid extends Floater
+{
+  public Asteroid() 
+  {
+    corners = 8;
+    int [] xS = {-4,-3,0,2,4,2,0,-2};
+    int [] yS = {0,-2,-4,-2,0,2,4,2};
+    xCorners = xS;
+    yCorners = yS;
+    myColor = color(255);
+    myCenterX = 300;
+    myCenterY = 300;
+    myDirectionX = 0;
+    myDirectionY = 0;
+    myPointDirection = 270;
+  }
+  public void setX(int x) {myCenterX = x;}
+   public int getX() {return (int)myCenterX;}
+   public void setY(int y) {myCenterY = y;}
+   public int getY() {return (int)myCenterY;} 
+   public void setDirectionX(double x) {myDirectionX = x;}
+   public double getDirectionX() {return (double)myDirectionX;} 
+   public void setDirectionY(double y) {myDirectionY = y;}
+   public double getDirectionY() {return (double)myDirectionY;}
+   public void setPointDirection(int degrees) {myPointDirection = degrees;}
+   public double getPointDirection() {return (double)myPointDirection;}  
+
 }
 
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 

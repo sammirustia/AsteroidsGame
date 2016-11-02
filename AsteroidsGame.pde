@@ -109,10 +109,10 @@ class Asteroid extends Floater
     int [] yS = {0,-2,-4,-2,0,2,4,2};
     xCorners = xS;
     yCorners = yS;
-    myColor = color(255);
+    myColor = color(133,137,138);
     myCenterX = 300;
     myCenterY = 300;
-    myDirectionX = 0;
+    myDirectionX = 0; 
     myDirectionY = 0;
     myPointDirection = 270;
   }

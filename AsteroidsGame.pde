@@ -2,9 +2,6 @@ SpaceShip max;
 Star [] bright = new Star[200];
 Asteroid [] more = new Asteroid[10];
 
-ArrayList <Rock> theList;
-theList = new ArrayList <Rocks>();
-
 public void setup() 
 {
   size (600,600);
@@ -18,8 +15,6 @@ public void setup()
     more[i] = new Asteroid();
   }
   max = new SpaceShip();
-
-  Rock 
 }
 
 

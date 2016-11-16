@@ -1,6 +1,8 @@
 SpaceShip max;
 Star [] bright = new Star[200];
-Asteroid [] more = new Asteroid[10];
+
+ArrayList <Asteroid> theList = new ArrayList <Asteroid>();
+
 
 public void setup() 
 {
@@ -10,9 +12,9 @@ public void setup()
   {
     bright[i] = new Star();
   }
-  for(int i = 0;i < more.length;i++)
+  for(int i = 0; i < 20; i++)
   {
-    more[i] = new Asteroid();
+    theList.add(new Asteroid());
   }
   max = new SpaceShip();
 }
@@ -25,11 +27,21 @@ public void draw()
   {
     bright[i].show();
   }
-  for(int i = 0;i < more.length;i++)
+
+  for(int i = 0; i < theList.size(); i++)
   {
-    more[i].show();
-    more[i].move();
+    theList.get(i).show();
+    theList.get(i).move();
   }
+
+  for(int i = 0; i < theList.size(); i++)
+  {
+    if(dist(max.getX(),max.getY(),theList.get(i).getX(),theList.get(i).getY()) < 20)
+    {
+      theList.remove(i);
+    }
+  }
+
   max.show();
   max.move();
 }

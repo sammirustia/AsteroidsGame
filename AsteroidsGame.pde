@@ -3,7 +3,6 @@ Star [] bright = new Star[200];
 
 ArrayList <Asteroid> theList = new ArrayList <Asteroid>();
 
-
 public void setup() 
 {
   size (600,600);
@@ -41,7 +40,7 @@ public void draw()
       theList.remove(i);
     }
   }
-
+  
   max.show();
   max.move();
 }

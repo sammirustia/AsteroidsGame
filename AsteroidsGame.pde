@@ -16,6 +16,7 @@ public void setup()
     theList.add(new Asteroid());
   }
   max = new SpaceShip();
+
 }
 
 
@@ -40,7 +41,7 @@ public void draw()
       theList.remove(i);
     }
   }
-  
+
   max.show();
   max.move();
 }

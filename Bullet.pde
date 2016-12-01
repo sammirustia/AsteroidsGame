@@ -1,3 +1,4 @@
+Bullet shoot;
 class Bullet extends Floater
 {
 	public Bullet(SpaceShip Max)
@@ -10,6 +11,7 @@ class Bullet extends Floater
 		myDirectionX = 5*Math.cos(dRadians) + max.getDirectionX();
 		myDirectionY = 5*Math.sin(dRadians) + max.getDirectionY();
 	}
+	
    public void setX(int x) {myCenterX = x;}
    public int getX() {return (int)myCenterX;}
    public void setY(int y) {myCenterY = y;}

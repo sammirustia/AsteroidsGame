@@ -1,5 +1,6 @@
 SpaceShip max;
 Star [] bright = new Star[200];
+Bullet shoot;
 
 ArrayList <Asteroid> theList = new ArrayList <Asteroid>();
 
@@ -16,7 +17,7 @@ public void setup()
     theList.add(new Asteroid());
   }
   max = new SpaceShip();
-
+  shoot = new Bullet(max);
 }
 
 
@@ -41,7 +42,7 @@ public void draw()
       theList.remove(i);
     }
   }
-
+  shoot.show();
   max.show();
   max.move();
 }

@@ -30,4 +30,9 @@ class Bullet extends Floater
 		fill(myColor);
 		ellipse((float)myCenterX, (float) myCenterY, 5,10);
 	}
+	public void move()
+	{
+		myCenterX += myDirectionX;    
+        myCenterY += myDirectionY; 
+	}
 }

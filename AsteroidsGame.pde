@@ -1,7 +1,7 @@
 SpaceShip max;
 Star [] bright = new Star[200];
-Bullet shoot;
-
+//Bullet shoot;
+ArrayList <Bullet> shoot = new ArrayList <Bullet>();
 ArrayList <Asteroid> theList = new ArrayList <Asteroid>();
 
 public void setup() 
@@ -17,7 +17,7 @@ public void setup()
     theList.add(new Asteroid());
   }
   max = new SpaceShip();
-  shoot = new Bullet(max);
+  //shoot = new Bullet(max);
 }
 
 
@@ -34,15 +34,23 @@ public void draw()
     theList.get(i).show();
     theList.get(i).move();
   }
-
+for(int j = 0; j < shoot.size();j ++)
+{
   for(int i = 0; i < theList.size(); i++)
   {
-    if(dist(max.getX(),max.getY(),theList.get(i).getX(),theList.get(i).getY()) < 20)
+    if(dist(shoot.get(j).getX(),shoot.get(j).getY(),theList.get(i).getX(),theList.get(i).getY()) < 20)
     {
       theList.remove(i);
     }
   }
-  shoot.show();
+}
+ 
+  for(int i = 0; i < shoot.size(); i++)
+  {
+    shoot.get(i).show();
+    shoot.get(i).move();
+  }
+
   max.show();
   max.move();
 }
@@ -68,6 +76,10 @@ class Star
 
 public void keyPressed()
   {
+    if(key == ' ')
+  {
+    shoot.add(new Bullet(max));
+  }
     if(keyCode == LEFT)
     {
       max.rotate(-15);
@@ -85,6 +97,7 @@ public void keyPressed()
       max.setDirectionX(0);
       max.setDirectionY(0);
     }
+
   }
 
   public void keyTyped()
